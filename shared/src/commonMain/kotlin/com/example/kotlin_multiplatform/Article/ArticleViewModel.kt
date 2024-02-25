@@ -11,7 +11,7 @@ class ArticleViewModel : BaseViewModel() {
     private val _articleState: MutableStateFlow<ArticleState> =
         MutableStateFlow(ArticleState(loading = true))
 
-    private val articlesState: StateFlow<ArticleState> get() = _articleState
+    val articlesState: StateFlow<ArticleState> get() = _articleState
 
     init {
         getArticle()
@@ -19,7 +19,7 @@ class ArticleViewModel : BaseViewModel() {
 
     private fun getArticle() {
         scope.launch {
-            delay(2000)
+            delay(1000)
             _articleState.emit(ArticleState(error = "Something went wrong"))
             delay(2000)
             val fetchedArticles = fetchArticles()
