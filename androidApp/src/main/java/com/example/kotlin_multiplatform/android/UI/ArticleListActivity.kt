@@ -1,4 +1,4 @@
-package com.example.kotlin_multiplatform.android
+package com.example.kotlin_multiplatform.android.UI
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

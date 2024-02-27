@@ -27,12 +27,14 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
 
-                    // AboutScreenActivity()
+                   /* // AboutScreenActivity()
                     //  GreetingView("Hello")
                     ArticleListActivity(
-                        onAboutButtonClick = { /*TODO*/ },
+                        onAboutButtonClick = { *//*TODO*//* },
                         articlesViewModel = articleViewModel
-                    )
+                    )*/
+                    
+                    AppScaffold(articleViewModel = articleViewModel)
                 }
             }
         }
@@ -49,7 +51,7 @@ fun GreetingView(text: String) {
 fun DefaultPreview() {
     MyApplicationTheme {
         //  GreetingView("Hello, Android!")
-        AboutScreenActivity()
+      //  AboutScreenActivity()
         //  ArticleListActivity(onAboutButtonClick = { /*TODO*/ }, articlesViewModel =articleViewModel)
 
     }
