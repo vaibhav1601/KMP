@@ -1,4 +1,4 @@
-package com.example.kotlin_multiplatform.Article
+package com.example.kotlin_multiplatform.articles
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

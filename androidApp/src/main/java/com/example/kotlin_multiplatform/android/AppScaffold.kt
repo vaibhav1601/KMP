@@ -9,13 +9,12 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.kotlin_multiplatform.Article.ArticleViewModel
 import com.example.kotlin_multiplatform.android.UI.AboutScreenActivity
 import com.example.kotlin_multiplatform.android.UI.ArticleListActivity
 
 
 @Composable
-fun AppScaffold(articleViewModel: ArticleViewModel) {
+fun AppScaffold() {
     val navController = rememberNavController()
 
     Scaffold {
@@ -23,8 +22,7 @@ fun AppScaffold(articleViewModel: ArticleViewModel) {
             navController = navController,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(it),
-            articleViewModel
+                .padding(it)
         )
 
     }
@@ -34,8 +32,7 @@ fun AppScaffold(articleViewModel: ArticleViewModel) {
 @Composable
 fun AppNavHost(
     navController: NavHostController,
-    modifier: Modifier,
-    articleViewModel: ArticleViewModel
+    modifier: Modifier
 ) {
     NavHost(
         navController = navController,
@@ -47,7 +44,6 @@ fun AppNavHost(
                 onAboutButtonClick = {
                     navController.navigate(Screen.ABOUT_DEVICE.root)
                 },
-                articleViewModel,
             )
         }
 

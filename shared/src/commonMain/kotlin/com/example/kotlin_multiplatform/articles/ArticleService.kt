@@ -1,4 +1,4 @@
-package com.example.kotlin_multiplatform.Article
+package com.example.kotlin_multiplatform.articles
 
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body

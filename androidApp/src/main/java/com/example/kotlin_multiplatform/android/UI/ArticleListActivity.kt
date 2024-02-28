@@ -1,4 +1,5 @@
 package com.example.kotlin_multiplatform.android.UI
+
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -29,14 +30,15 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.example.kotlin_multiplatform.Article.Article
-import com.example.kotlin_multiplatform.Article.ArticleViewModel
+import com.example.kotlin_multiplatform.articles.Article
+import com.example.kotlin_multiplatform.articles.ArticleViewModel
+import org.koin.androidx.compose.getViewModel
 
 
 @Composable
 fun ArticleListActivity(
     onAboutButtonClick: () -> Unit,
-    articlesViewModel: ArticleViewModel,
+    articlesViewModel: ArticleViewModel = getViewModel(),
 ) {
     val articlesState = articlesViewModel.articlesState.collectAsState()
 

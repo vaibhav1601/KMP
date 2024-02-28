@@ -34,7 +34,7 @@ kotlin {
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.serialization.kotlinx.json)
-           // implementation(libs.kotlinx.datetime)
+            implementation(libs.kotlinx.datetime.v050)
             implementation(libs.koin.core)
         }
         commonTest.dependencies {
