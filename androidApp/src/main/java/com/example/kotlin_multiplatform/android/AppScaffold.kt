@@ -33,7 +33,9 @@ fun AppScaffold(articleViewModel: ArticleViewModel) {
 
 @Composable
 fun AppNavHost(
-    navController: NavHostController, modifier: Modifier, articleViewModel: ArticleViewModel
+    navController: NavHostController,
+    modifier: Modifier,
+    articleViewModel: ArticleViewModel
 ) {
     NavHost(
         navController = navController,
@@ -49,8 +51,14 @@ fun AppNavHost(
             )
         }
 
+
         composable(Screen.ABOUT_DEVICE.root) {
-            AboutScreenActivity(onUpButtonClick = { navController.popBackStack() })
+            AboutScreenActivity(
+                onUpButtonClick =
+                {
+                    navController.popBackStack()
+                }
+            )
         }
     }
 

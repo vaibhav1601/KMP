@@ -1,6 +1,9 @@
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    id("co.touchlab.skie") version "0.4.19"
+    kotlin("plugin.serialization") version "1.9.20"
 }
 
 kotlin {
@@ -28,6 +31,11 @@ kotlin {
             //put your multiplatform dependencies here
 
             implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.serialization.kotlinx.json)
+           // implementation(libs.kotlinx.datetime)
+            implementation(libs.koin.core)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -35,8 +43,8 @@ kotlin {
 
         val androidMain by getting {
             dependencies {
-                implementation(libs.androidx.lifecycle.viewmodel.ktx
-                )
+                implementation(libs.androidx.lifecycle.viewmodel.ktx)
+                implementation(libs.ktor.client.android)
             }
         }
 

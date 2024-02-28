@@ -22,7 +22,7 @@ import com.example.kotlin_multiplatform.Platform
 
 @Composable
 fun AboutScreenActivity(
-    onUpButtonClick:()-> Unit
+    onUpButtonClick: () -> Unit
 ) {
     Column {
         Toolbar(onUpButtonClick)
@@ -32,16 +32,17 @@ fun AboutScreenActivity(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun Toolbar(onUpButtonClick: () -> Unit) {
+private fun Toolbar(
+    onUpButtonClick: () -> Unit
+) {
     TopAppBar(
         title = { Text(text = "About Device") },
-
         navigationIcon = {
-            IconButton(onClick = { onUpButtonClick}) {
-                Icon(imageVector = Icons.Default.ArrowBack,
-                    contentDescription = "Up Button"
+            IconButton(onClick = onUpButtonClick) {
+                Icon(
+                    imageVector = Icons.Default.ArrowBack,
+                    contentDescription = "Up Button",
                 )
-                
             }
         }
     )
