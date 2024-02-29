@@ -1,5 +1,7 @@
 package com.example.kotlin_multiplatform.articles.di
 
+import com.example.kotlin_multiplatform.articles.ArticleDataSource
+import com.example.kotlin_multiplatform.articles.ArticleRepository
 import com.example.kotlin_multiplatform.articles.ArticleService
 import com.example.kotlin_multiplatform.articles.ArticleUseCase
 import com.example.kotlin_multiplatform.articles.ArticleViewModel
@@ -14,6 +16,12 @@ val articlesModule = module {
     }
     single<ArticleViewModel> {
         ArticleViewModel(get())
+    }
+    single<ArticleDataSource> {
+        ArticleDataSource(get())
+    }
+    single<ArticleRepository> {
+        ArticleRepository(get(), get())
     }
 
 }

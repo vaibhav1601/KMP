@@ -8,9 +8,9 @@ import kotlinx.datetime.toLocalDateTime
 import kotlinx.datetime.todayIn
 import kotlin.math.abs
 
-class ArticleUseCase(private val service: ArticleService) {
-    suspend fun getArticle(): List<Article> {
-        val articleRaw = service.fetchArticle()
+class ArticleUseCase(private val repo: ArticleRepository) {
+    suspend fun getArticle(fetchArticle: Boolean): List<Article> {
+        val articleRaw = repo.getArticles(fetchArticle)
         return mapArticle(articleRaw);
     }
 
